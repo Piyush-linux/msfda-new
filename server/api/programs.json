@@ -1,0 +1,13 @@
+{
+  "centreID": "1",
+  "name": "HTML",
+  "about": "IISER, Pune’s cascading model training for all the science and math faculty of HEIs on skill development and capacity building needs"
+}
+
+// admin
+{
+  "id": "234234235" ,
+  "username": "hello" , 
+  "password" : "hello"
+
+}
