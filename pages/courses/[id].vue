@@ -150,13 +150,16 @@ const { id } = useRoute().params
 console.log(id)
 let url = `http://localhost:1337/api/courses/${id}?populate=centre,partner`
 
-// let data = ref(null)
 
-    // const { data:course } = await (await fetch(url)).json()
 const { data } = await (await fetch(url)).json()
-// noMounted(async()=>{
-//     console.log(course)
-//     data.value = course
+// const { data } = await useFetch(url)
+
+
+// let data = ref(null)
+// onMounted(async()=>{
+//     const { data: co } = await (await fetch(url)).json()
+//     // console.log(course)
+//     data.value = co
 // })
 
 let formatDate = computed(()=>{

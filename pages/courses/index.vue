@@ -16,6 +16,17 @@
 
 let url = 'http://localhost:1337/api/courses'
 
-let {data} = await(await fetch(url)).json()
+// let {data} = await(await fetch(url)).json()
+
+// let {data} = await(await fetch(url)).json()
+
+
+let data=ref(null)
+// let {data} = await useFetch(url)
+onMounted(async()=>{
+	let {data:cou} = await(await fetch(url)).json()
+	data.value = cou
+	// let {data} = await(await fetch(url)).json()
+})
 	
 </script>
