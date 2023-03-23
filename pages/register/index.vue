@@ -30,6 +30,15 @@
                                 <div class="dummy mb-3">
                                     <label for="" class="label">Test : Course Name</label>
                                     <input type="text" class="input" :value="coursename" name="coursename">
+                                    <!-- ID date -->
+                                    <div class="field">
+                                        <label class="label">
+                                            Test : Date Selected !
+                                        </label>
+                                        <div class="control">
+                                            <input type="text" class="input" :value="date" name="date" placeholder="date">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!--  -->
@@ -38,9 +47,9 @@
                                     Centre
                                 </label>
                                 <select id="" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" name="centreid" required @input="helo1" ref="centreid">
-                                    <option selected>Select a option</option>
-                                    <option v-for="(val, index) in centreOption" :value="val.centreID" :key="index">
-                                        {{ val.name }}
+                                    <option selected value="Select option">Select option</option>
+                                    <option v-for="(val, index) in centreOption.data" :value="val.id" :key="index">
+                                        {{ val.attributes.name }}
                                     </option>
                                 </select>
                             </div>
@@ -50,7 +59,7 @@
                                     Course
                                 </label>
                                 <select id="" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" name="courseid" required @input="helo2" ref="courseid">
-                                    <option selected>Select a option</option>
+                                    <option selected value="Select option">Select option</option>
                                     <option v-for="(val, index) in coursenameOption.data" :value="val.attributes.courseid" :key="index">
                                         {{ val.attributes.name }}
                                     </option>
@@ -234,12 +243,81 @@
                 <!-- nxt_back -->
             </div>
         </form>
+        <!-- modal -->
+        <!-- <div class="relative" v-show="form_submit"> -->
+        <div v-show="notify_validate" class="relative flex justify-center bg-opacity-70">
+            <div class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                    <div class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform  rounded-lg rtl:text-right sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                        <div class="rounded-lg p-8 shadow-2xl bg-white">
+                            <h2 class="text-lg font-bold">Please Fill All Details !</h2>
+                            <p class="mt-2 text-sm text-gray-500">
+                                Doing that could have cause some issues elsewhere, are you 100% sure it's
+                                OK?
+                            </p>
+                            <div class="mt-4 flex gap-2">
+                                <button type="button" class="rounded bg-rose-400 px-4 py-2 text-sm font-medium text-white" @click="notify_validate = false">
+                                    Sure
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal_end -->
+        <!-- notify -->
+        <div v-show="form_submit" class="relative flex justify-center bg-opacity-70">
+            <div class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                    <div class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl rtl:text-right sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                        <div>
+                            <div class="flex items-center justify-center">
+                                <!-- icon -->
+                                <button class="button" @click="isOpen = false">
+                                    <span class="iconify h-7 w-7" data-icon="ic:round-library-add-check"></span>
+                                </button>
+                            </div>
+                            <div class="mt-2 text-center">
+                                <h3 class="text-lg font-medium leading-6 text-gray-800 capitalize" id="modal-title">
+                                    Form Submitted
+                                </h3>
+                                <p class="mt-2 text-sm text-gray-500">
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-5 sm:flex sm:items-center sm:justify-evenly justify-center">
+                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                                HOME
+                            </button>
+                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                                COURSES
+                            </button>
+                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                                ABOUT
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- notify_end -->
     </div>
 </template>
 <script setup>
+let isOpen = ref()
+
+
+let centreOption = await(await fetch('http://localhost:1337/api/centres')).json()
+
 // 0
 let activeStep = ref(1)
 // 1
+let date = ref(null)
 let centreid = ref(null);
 let coursenameOption = ref('');
 let courseid = ref('');
@@ -250,26 +328,34 @@ let helo1 = async () => {
     console.log('---')
     let url = centreid.value.value
     try {
-        let {data} = await(await fetch(`http://localhost:1337/api/centres/${url}?populate=courses`)).json()
+        let { data } = await (await fetch(`http://localhost:1337/api/centres/${url}?populate=courses`)).json()
         console.log(data)
         coursenameOption.value = data.attributes.courses;
         console.log(coursenameOption.value)
 
-    } catch(e) {
-        
+    } catch (e) {
+
         console.log(e);
     }
 }
+let courseNameNew = ref(null)
+let helo2 = () => {
+    // console.log(courseid.value.value)
+    let sample = courseid.value.value
+    courseNameNew.value = coursenameOption.value.data.filter((x) => x.attributes.courseid == sample  )
+    coursename.value = courseNameNew.value[0].attributes.name
+    // console.log('helo2')
+    // console.log(sample)
+    // console.log(courseNameNew.value)
+    // console.log(courseNameNew.value)
+    date.value  = courseNameNew.value[0].attributes.date
+    // console.log("date : " + courseNameNew.value[0].attributes.date)
+    console.log("Date + " + date.value)
+}
 
-// let helo2 = () => {
-//     let sample = courseid.value.value
-//     let cousreNameNew = coursenameOption.value.filter((x) => x.courseid == sample)
-//     coursename.value = cousreNameNew[0].name
-// }
 
 
-
-let centreOption = [{
+let centreOption1 = [{
         centreID: "1",
         image: "https://www.swarnprastha.com/wp-content/uploads/2019/06/91283370-pedagogy-word-cloud-concept-.jpg",
         name: "Centre for Multidisciplinary Curriculum and Pedagogy",
@@ -389,19 +475,23 @@ let universityOption = ['Karmaveer Bhaurao Patil University Satara', 'Savitribai
 
 
 
-// let notify_validate = ref(false)
+let notify_validate = ref(false)
 
-// let notify = () => {
-//     alert('Please Fill All Filed Correctly !')
-// }
+let notify = () => {
+    notify_validate.value = true
+    // alert('Please Fill All Filed Correctly !')
+}
 
 let validate = (val) => {
     if (val == 1) {
         // centreid , coursename 
-        let cou = centreid.value.value != 'Select option' && coursename.value.value != 'Select option';
+        let cou1 = centreid.value.value != 'Select option' && coursename.value != 'Select option';
+        // let cou2 = centreid.value.value != null && coursename.value.value != null ;
         console.log('Validating ... 1')
-        console.log(centreid.value.value)
-        return cou
+        // console.log(centreid.value.value)
+        // console.log(coursename.value.value)
+        // return (cou1 && cou2)
+        return cou1
 
     } else if (val == 2) {
         // name , email , number , gender , age, district
@@ -466,8 +556,8 @@ let next = () => {
     switch (activeStep.value) {
         case 1:
             console.log('validate 1')
-            // if (validate(activeStep.value)) {
-            if (true) {
+            if (validate(activeStep.value)) {
+                // if (true) {
                 activeStep.value += 1
             } else {
                 notify()
@@ -475,8 +565,8 @@ let next = () => {
             break;
         case 2:
             console.log('validate 2')
-            // if (validate(activeStep.value)) {
-            if (true) {
+            if (validate(activeStep.value)) {
+                // if (true) {
                 activeStep.value += 1
             } else {
                 notify()
@@ -484,8 +574,8 @@ let next = () => {
             break;
         case 3:
             console.log('validate 3')
-            // if (validate(activeStep.value)) {
-            if (true) {
+            if (validate(activeStep.value)) {
+                // if (true) {
                 activeStep.value += 1
             } else {
                 notify()
@@ -512,8 +602,8 @@ let back = () => {
 // Register hit api : /api/auth/reg
 let register = async (dt) => {
     try {
-        const { data: res } = await (await fetch('/api/auth/register', { 
-            method: 'POST', 
+        const { data: res } = await (await fetch('/api/auth/register', {
+            method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dt)
         })).json()

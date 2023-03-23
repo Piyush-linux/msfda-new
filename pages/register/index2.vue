@@ -1,74 +1,13 @@
 <template>
     <div class="section">
-        
         <!-- form -->
         <form @submit.prevent="submit">
             <div class="columns is-multiline is-centered mt-6">
                 <!-- 1 -->
-                <div class="column is-7" v-show="activeStep == 1">
-                    <!-- name -->
-                    <div class="title">Course</div>
-                    <!-- centre
-                     -->
-                    <div class="field" style="visibility:collapse;display:table">
-                        <div class="dummy mb-3">
-                            <label for="" class="label">Test : Course Name</label>
-                            <input type="text" class="input" :value="coursename" name="coursename">
-                            <input type="text" class="input" :value="date" name="date">
-                        </div>
-                    </div>
-                    
-                    <div class="field">
-                        <div class="control is-expanded">
-                            <label class="label">
-                                Centre
-                            </label>
-                            <div class="select is-fullwidth">
-                                <select name="centreid" @input="helo1" ref="centreid">
-                                    <!-- <select name="centreid"  v-model="centreid" @input="helo(event)" required ref="centreid"> -->
-                                    <option value="Select option">Select option</option>
-                                    <option v-for="(val, index) in centreOption" :value="val.centreID" :key="index">
-                                        {{ val.name }}
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- course -->
-                    <div class="field">
-                        <div class="control is-expanded">
-                            <label class="label">
-                                Course
-                            </label>
-                            <div class="select is-fullwidth">
-                                <!-- <select name="centreid" @input="helo" required ref="centreid"> -->
-                                <select name="courseid" @input="helo2" ref="courseid">
-                                    <option value="Select option">Select option</option>
-                                    <option v-for="(val, index) in coursenameOption" :value="val.courseid" :key="index">
-                                        {{ val.name }}
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- date -->
-                    <div class="field">
-                        <label for="" class="label">
-                            Select Date To Attend The Program .
-                        </label>
-                          <n-date-picker v-model:value="timestamp" type="date" />
-                        <hr>
-                    </div>
-                    <!-- <UISelect names="coursename" label="Centre Selected !" :options="coursenameOption" v-model="coursename" class="mt-3" /> -->
-                    <!-- {{ coursenameOption }} -->
-                    <button class="button is-dark" type="button" @click="next">Next</button>
-                </div>
                 <!-- 2 -->
                 <!-- 3 -->
                 <!-- 4 -->
-
                 <!-- 5 -->
-                
             </div>
         </form>
         <!-- modal -->
@@ -87,15 +26,6 @@
                         </center>
                         <hr />
                         <div style="display: flex; justify-content: center">
-                            <!-- abt -->
-                            <!-- <NuxtLink class="is-large has-text-primary mx-3" to="/about">
-                                <div class="icon is-large">
-                                    <span class="iconify" data-icon="uim:document-layout-left"></span>
-                                </div>
-                                <br />
-                                <span class="has-text-weight-bold">About</span>
-                            </NuxtLink> -->
-                            <!--  -->
                             <NuxtLink class="is-large has-text-info mx-3" to="/">
                                 <div class="icon is-large">
                                     <span class="iconify" data-icon="uim:clinic-medical"></span>
@@ -103,7 +33,6 @@
                                 <br />
                                 <span class="has-text-weight-bold">Home</span>
                             </NuxtLink>
-                            <!-- courses -->
                             <NuxtLink class="is-large has-text-danger mx-3" to="courses">
                                 <div class="icon is-large">
                                     <span class="iconify" data-icon="uim:dialpad"></span>
@@ -111,14 +40,13 @@
                                 <br />
                                 <span class="has-text-weight-bold">Courses</span>
                             </NuxtLink>
-                            <!-- Payment -->
-                            <a href="https://easypay.axisbank.co.in/easyPay/makePayment?mid=NTkwNzQ%3D" class="is-large has-text-primary mx-3">
+                            <NuxtLink class="is-large has-text-danger mx-3" to="courses">
                                 <div class="icon is-large">
-                                    <span class="iconify" data-icon="fluent:payment-28-filled"></span>
+                                    <span class="iconify" data-icon="uim:dialpad"></span>
                                 </div>
                                 <br />
-                                <span class="has-text-weight-bold">Payment</span>
-                            </a>
+                                <span class="has-text-weight-bold">Courses</span>
+                            </NuxtLink>
                         </div>
                     </div>
                 </div>
@@ -148,7 +76,7 @@
 import { NSpace, NStep, NSteps, NDatePicker } from 'naive-ui'
 
 let timestamp = ref(null)
-let date = computed(()=>{
+let date = computed(() => {
     return new Date(timestamp.value)
 })
 
