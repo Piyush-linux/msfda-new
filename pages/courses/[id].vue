@@ -6,7 +6,7 @@
                 <div class="flex flex-wrap items-center mx-auto max-w-7xl">
                     <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
                         <div class="relative w-full">
-                            <iframe class="w-full h-96 rounded-2xl" src="https://youtube.com/embed/5HwHFuVdJB8" title="Deccan College   MSFDA AV Clip" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe class="w-full h-96 rounded-2xl" src="https://www.youtube.com/embed/GF2vIaPG7iM" title="Deccan College   MSFDA AV Clip" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="flex flex-col items-start mt-12 mb-12 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
@@ -39,7 +39,8 @@
                             <div class="p-5 bg-white shadow-lg rounded-2xl sm:w-36 m-3">
                                 <div class="flex items-center">
                                     <!-- icon -->
-                                    <span class="iconify w-5 h-5" data-icon="material-symbols:attach-money"></span>
+                                    <span class="iconify w-5 h-5" data-icon="ic:baseline-access-time"></span>
+                                    <!-- <span class="iconify w-5 h-5" data-icon="material-symbols:attach-money"></span> -->
                                     <p class="ml-2 text-gray-700 text-md ">
                                         Duration
                                     </p>
@@ -57,7 +58,7 @@
                             <div class="p-5 bg-white shadow-lg rounded-2xl sm:w-36 m-3">
                                 <div class="flex items-center">
                                     <!-- icon -->
-                                    <span class="iconify w-5 h-5" data-icon="material-symbols:attach-money"></span>
+                                    <span class="iconify w-5 h-5" data-icon="material-symbols:date-range-rounded"></span>
                                     <p class="ml-2 text-gray-700 text-md ">
                                         Date
                                     </p>
@@ -146,9 +147,17 @@
 <script setup>
 	
 const { id } = useRoute().params
-let url = `http://localhost:1337/api/courses/${id}?populate=centre,partner`
 console.log(id)
+let url = `http://localhost:1337/api/courses/${id}?populate=centre,partner`
+
+// let data = ref(null)
+
+    // const { data:course } = await (await fetch(url)).json()
 const { data } = await (await fetch(url)).json()
+// noMounted(async()=>{
+//     console.log(course)
+//     data.value = course
+// })
 
 let formatDate = computed(()=>{
 	let input = data.attributes.date

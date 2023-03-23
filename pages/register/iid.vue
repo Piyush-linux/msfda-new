@@ -347,8 +347,6 @@
     </div>
 </template>
 <script setup>
-import { NSpace, NStep, NSteps, NDatePicker } from 'naive-ui'
-// import { NSpace, NStep, NSteps } from 'naive-ui'
 
 const route = useRoute()
 const { id } = route.params

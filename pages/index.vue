@@ -203,32 +203,32 @@ let centre = [{
     id: 1,
     image: c1,
     title: "Centre for multidiciplinary",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci dicta aliquid quis, facilis laborum, explicabo doloremque consectetur vero, vitae magni ducimus nulla!"
+    desc: "The Centre will carry out trainings in learning opportunities with a multi-disciplinary approach. In line with the NEP, 2020, the Centre will enable institutions and faculty to provide open, creative, and critical learning opportunities by inter-connecting various streams of arts and science."
 }, {
     id: 2,
     image: c2,
     title: "Centre for Leadership Development",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci dicta aliquid quis, facilis laborum, explicabo doloremque consectetur vero, vitae magni ducimus nulla!"
+    desc: "This Centre will focus on training of senior faculty of HEIs who are in leadership positions or are likely to assume leadership positions. The various aspects of NEP, 2020 will be discussed with them and they will be motivated to translate the policy features into actuality within their institutions."
 }, {
     id: 3,
     image: c3,
     title: "Centre for Inclusion and Diversity",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci dicta aliquid quis, facilis laborum, explicabo doloremque consectetur vero, vitae magni ducimus nulla!"
+    desc: "The Centre will sensitize the faculty, students and HEIs to diversity and inclusion as a non-negotiable value."
 }, {
     id: 4,
     image: c4,
     title: "Centre for Innovation and Cutting Edge Technology",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci dicta aliquid quis, facilis laborum, explicabo doloremque consectetur vero, vitae magni ducimus nulla!"
+    desc: "The Centre will foster innovation culture in HEIs. It will develop tools and methodologies to nurture innovation, incubation and entrepreneurial ecosystem and impart trainings in this field. It will focus on research and analysis and strengthen the participant’s understanding as an entrepreneur, leader and/or explorer in new fields and ideas."
 }, {
     id: 5,
     image: c5,
     title: "Centre for Resources",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci dicta aliquid quis, facilis laborum, explicabo doloremque consectetur vero, vitae magni ducimus nulla!"
+    desc: "The Centre will be developed as a studio hosting a library, an audio-visual room, a performance space with required technical and other resources and provision for regular updating of resources like books, journals, periodicals, films, audio files, etc."
 }, {
     id: 7,
     image: c7,
     title: "Centre for Evaluation and Assessment",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci dicta aliquid quis, facilis laborum, explicabo doloremque consectetur vero, vitae magni ducimus nulla!"
+    desc: "The Centre is aimed at complementing and enhancing the working of other Centres and to build capacities in the system for higher quality in assessment and evaluation."
 }]
 
 // let approac

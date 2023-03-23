@@ -12,14 +12,14 @@
                                     <img src="@/assets/img/gal1.jpg" alt="" class="w-full rounded-2xl" />
                                 </div>
                                 <div class="py-3 sm:py-4">
-                                    <img src="@/assets/img/gal1.jpg" alt="" class="w-full rounded-2xl" />
+                                    <img src="@/assets/img/gal3.png" alt="" class="w-full rounded-2xl" />
                                     <!-- <img src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-2.jpg" alt="" class="w-full rounded-2xl" /> -->
                                 </div>
                             </div>
                             <div class="w-full px-3 sm:px-4 xl:w-1/2">
                                 <div class="relative z-10 my-4">
-                                    <img src="@/assets/img/gal1.jpg" alt="" class="w-full rounded-2xl" />
-                                    <!-- <img src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-3.jpg" alt="" class="w-full rounded-2xl" /> -->
+                                    <!-- <img src="@/assets/img/gal1.jpg" alt="" class="w-full rounded-2xl" /> -->
+                                    <img src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-3.jpg" alt="" class="w-full rounded-2xl" />
                                     <span class="absolute -right-7 -bottom-7 z-[-1]">
                                         <svg width="134" height="106" viewBox="0 0 134 106" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="1.66667" cy="104" r="1.66667" transform="rotate(-90 1.66667 104)" fill="#3056D3" />

@@ -46,9 +46,9 @@
                             <NuxtLink class="block rounded-md bg-blue-400 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-500" href="/register">
                                 Register
                             </NuxtLink>
-                            <a class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-sky-600 transition hover:text-teal-600/75 sm:block" href="/">
-                                Register
-                            </a>
+                            <NuxtLink class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-sky-600 transition hover:text-teal-600/75 sm:block" to="/admin/auth">
+                                Admin
+                            </NuxtLink>
                         </div>
                         <button class="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden">
                             <span class="sr-only">Toggle menu</span>

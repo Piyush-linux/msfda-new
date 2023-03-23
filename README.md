@@ -7,6 +7,8 @@ DATABASE_URL=mongodb+srv://msfda:xFtXu86eaj2MAM9@cluster0.bgqcqy1.mongodb.net/ms
 
 # TASk
 
+- [ ] /register/:id
+
 - [ ] folder
 	- .env : DATABASE_URL
 	- pages
