@@ -13,6 +13,7 @@
 </template>
 
 <script setup>
-    let url= "http://localhost:1337/api/blogs?populate=Author"
+    const runtimeConfig = useRuntimeConfig()
+    let url= `${runtimeConfig.public.apiBase}/blogs?populate=Author`
     let { data: blgs } = await (await fetch(url)).json()
 </script>

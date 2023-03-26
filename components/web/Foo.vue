@@ -40,39 +40,39 @@
             </nav>
             <ul class="mt-12 flex justify-center gap-6 md:gap-8">
                 <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
+                    <a href="https://www.linkedin.com/company/msfda/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
                         <span class="sr-only">linkdin</span>
                         <span class="iconify h-7 w-7" data-icon="mdi:linkedin"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
+                    <a href="https://www.facebook.com/MSFDA.Official/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
                         <span class="sr-only">Facebook</span>
                         <span class="iconify h-7 w-7" data-icon="mdi:facebook"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
+                    <a href="https://www.instagram.com/msfda_official/?hl=en" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
                         <span class="sr-only">Instagram</span>
                         <span class="iconify h-7 w-7" data-icon="mdi:instagram"></span>
                         
                     </a>
                 </li>
                 <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
+                    <a href="https://mobile.twitter.com/msfda_official" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
                         <span class="sr-only">Twitter</span>
                         <span class="iconify h-7 w-7" data-icon="mdi:twitter"></span>
                         
                     </a>
                 </li>
                 <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
+                    <a href="https://www.youtube.com/@msfda4213" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
                         <span class="sr-only">Youtube</span>
                         <span class="iconify h-7 w-7" data-icon="mdi:youtube"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
+                    <a href="https://goo.gl/maps/7ncpCenJ6jYmpWCQ6" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:text-gray-700/75">
                         <span class="sr-only">location</span>
                         <span class="iconify h-7 w-7" data-icon="mdi:map-marker"></span>
                         

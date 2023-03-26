@@ -25,11 +25,15 @@
                         <div class="" v-show="activeStep == 1">
                             <!-- name -->
                             <div class="text-3xl font-bold">Course</div>
-                            <!-- centre -->
-                            <div class="field" style="visibility:collapse;display:table">
+                            <!-- T E S T -->
+                            <!-- <div class="field" style="visibility:collapse;display:table"> -->
+                            <div class="field">
                                 <div class="dummy mb-3">
-                                    <label for="" class="label">Test : Course Name</label>
-                                    <input type="text" class="input" :value="coursename" name="coursename">
+                                    <label for="" class="label">Test</label>
+                                    <!-- courseid -->
+                                    <input type="text" class="input" :value="courseid" name="courseid">
+                                    <!-- centreid -->
+                                    <input type="text" class="input" :value="centreid" name="centreid">
                                     <!-- ID date -->
                                     <div class="field">
                                         <label class="label">
@@ -41,27 +45,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--  -->
-                            <div class="mt-6">
-                                <label for="" class="text-xs sm:text-lg font-medium text-gray-600">
-                                    Centre
-                                </label>
-                                <select id="" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" name="centreid" required @input="helo1" ref="centreid">
-                                    <option selected value="Select option">Select option</option>
-                                    <option v-for="(val, index) in centreOption.data" :value="val.id" :key="index">
-                                        {{ val.attributes.name }}
-                                    </option>
-                                </select>
-                            </div>
                             <!-- course -->
                             <div class="mt-6">
                                 <label for="" class="text-xs sm:text-lg font-medium text-gray-600">
                                     Course
                                 </label>
-                                <select id="" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" name="courseid" required @input="helo2" ref="courseid">
-                                    <option selected value="Select option">Select option</option>
-                                    <option v-for="(val, index) in coursenameOption.data" :value="val.attributes.courseid" :key="index">
-                                        {{ val.attributes.name }}
+                                <select id="" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" name="coursename" required>
+                                    <option :value="coursename">
+                                        {{ coursename }}
                                     </option>
                                 </select>
                             </div>
@@ -310,8 +301,11 @@
 </template>
 <script setup>
 const runtimeConfig = useRuntimeConfig()
-
 let isOpen = ref()
+
+const route = useRoute()
+const { id } = route.params
+const { coursename, centreid, courseid , date } = route.query
 
 
 let centreOption = await(await fetch(`${runtimeConfig.public.apiBase}/centres`)).json()
@@ -319,44 +313,6 @@ let centreOption = await(await fetch(`${runtimeConfig.public.apiBase}/centres`))
 // 0
 let activeStep = ref(1)
 // 1
-let date = ref(null)
-let centreid = ref(null);
-let coursenameOption = ref('');
-let courseid = ref('');
-let coursename = ref(null);
-let courseData = ref('');
-
-let helo1 = async () => {
-    console.log('---')
-    let url = centreid.value.value
-    try {
-        let { data } = await (await fetch(`${runtimeConfig.public.apiBase}/centres/${url}?populate=courses`)).json()
-        console.log(data)
-        coursenameOption.value = data.attributes.courses;
-        console.log(coursenameOption.value)
-
-    } catch (e) {
-
-        console.log(e);
-    }
-}
-let courseNameNew = ref(null)
-let helo2 = () => {
-    // console.log(courseid.value.value)
-    let sample = courseid.value.value
-    courseNameNew.value = coursenameOption.value.data.filter((x) => x.attributes.courseid == sample  )
-    coursename.value = courseNameNew.value[0].attributes.name
-    // console.log('helo2')
-    // console.log(sample)
-    // console.log(courseNameNew.value)
-    // console.log(courseNameNew.value)
-    date.value  = courseNameNew.value[0].attributes.date
-    // console.log("date : " + courseNameNew.value[0].attributes.date)
-    console.log("Date + " + date.value)
-}
-
-
-
 let centreOption1 = [{
         centreID: "1",
         image: "https://www.swarnprastha.com/wp-content/uploads/2019/06/91283370-pedagogy-word-cloud-concept-.jpg",
@@ -487,7 +443,7 @@ let notify = () => {
 let validate = (val) => {
     if (val == 1) {
         // centreid , coursename 
-        let cou1 = centreid.value.value != 'Select option' && coursename.value != 'Select option';
+        let cou1 = coursename.value != '';
         // let cou2 = centreid.value.value != null && coursename.value.value != null ;
         console.log('Validating ... 1')
         // console.log(centreid.value.value)

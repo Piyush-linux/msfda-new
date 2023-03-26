@@ -38,7 +38,7 @@
                 <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-4xl my-8 text-center">C E N T R E</h1>
                 <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mt-6">
                     <div class="" v-for="(cen ,i) in centre">
-                        <webHovercard :tit="cen.title" :desc="cen.desc" :uuid="(i+1)" :image="cen.image" class="h-96" />
+                        <webHovercard :tit="cen.title" :desc="cen.desc" :uuid="cen.id" :image="cen.image" class="h-96" />
                     </div>
                 </div>
             </div>

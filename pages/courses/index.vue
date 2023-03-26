@@ -13,9 +13,11 @@
 </template>	
 
 <script setup>
-
-let url = 'http://localhost:1337/api/courses'
-
+const runtimeConfig = useRuntimeConfig()
+let url = `${runtimeConfig.public.apiBase}/courses`
+// let url = 'http://localhost:1337/api/courses'
+// console.log(runtimeConfig)
+console.log(runtimeConfig.public.apiBase)
 // let {data} = await(await fetch(url)).json()
 
 // let {data} = await(await fetch(url)).json()

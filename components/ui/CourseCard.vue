@@ -33,7 +33,7 @@
 
 <script setup>
 	const props = defineProps({
-        uuid:String ,
+        uuid:Number ,
 		tit:String ,
         desc:String ,
 		date:String 

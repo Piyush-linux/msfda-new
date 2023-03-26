@@ -41,10 +41,11 @@
     </div>
 </template>
 <script setup>
+const runtimeConfig = useRuntimeConfig()
 const nuxtApp = useNuxtApp()
 const route = useRoute()
 // let url = `http://localhost:1337/api/blogs/${route.params.id}?populate=Author,image`
-let url = `http://localhost:1337/api/blogs/${route.params.id}?populate=Author`
+let url = `${runtimeConfig.public.apiBase}/blogs/${route.params.id}?populate=Author`
 let { data } = await (await fetch(url)).json()
 
 // const { data: count } = await useFetch('http://localhost:1337/api/blogs/1')

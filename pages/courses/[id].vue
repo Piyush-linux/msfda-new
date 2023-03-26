@@ -11,11 +11,11 @@
                     </div>
                     <div class="flex flex-col items-start mt-12 mb-12 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
                         <h1 class="mb-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 md:text-7xl lg:text-5xl">
-                       {{data.attributes.name}}
-                    </h1>
+                            {{data.attributes.name}}
+                        </h1>
                         <p class="mb-1 text-base leading-relaxed text-left text-gray-500">
-                        {{data.attributes.about}}
-                    </p>
+                            {{data.attributes.about}}
+                        </p>
                         <div class="mt-0 lg:mt-1 w-full sm:flex ">
                             <div class="p-5 bg-white shadow-lg rounded-2xl sm:w-36 m-3">
                                 <!-- m1 -->
@@ -75,7 +75,14 @@
                             </div>
                         </div>
                         <!-- profile -->
-                        <NuxtLink :to="`/register/${id}?courseid=${data.attributes.courseid}`" class="w-full">
+                        <!-- Register -->
+                       <!--  <NuxtLink :to="`/register/${id}?coursename=${data.name}&centreid=${data.centreid}&courseid=${data.courseid}`">
+                            <button style="box-shadow: 0px 0px 20px 2px 3px gray;border-radius: 10px;" class="button is-primary is-fullwidth is-medium txt-bold">
+                                R E G I S T E R
+                            </button>
+                        </NuxtLink> -->
+
+                        <NuxtLink :to="`/register/${id}?coursename=${data.attributes.name}&courseid=${data.attributes.courseid}&centreid=${data.attributes.centre.data.id}&date=${data.attributes.date}`" class="w-full">
                             <button class="button p-4 rounded-2xl text-white font-bold bg-emerald-400 mt-6 w-full">
                                 R E G I S T E R
                             </button>
@@ -145,10 +152,10 @@
     </div>
 </template>
 <script setup>
-	
+const runtimeConfig = useRuntimeConfig()
 const { id } = useRoute().params
 console.log(id)
-let url = `http://localhost:1337/api/courses/${id}?populate=centre,partner`
+let url = `${runtimeConfig.public.apiBase}/courses/${id}?populate=centre,partner`
 
 
 const { data } = await (await fetch(url)).json()
@@ -162,14 +169,14 @@ const { data } = await (await fetch(url)).json()
 //     data.value = co
 // })
 
-let formatDate = computed(()=>{
-	let input = data.attributes.date
-  var datePart = input.match(/\d+/g),
-  year = datePart[0].substring(2), // get only two digits
-  month = datePart[1], day = datePart[2];
-  return day+'/'+month+'/'+year;
-	// console.log(data.attributes.centre)
-	// return data
+let formatDate = computed(() => {
+    let input = data.attributes.date
+    var datePart = input.match(/\d+/g),
+        year = datePart[0].substring(2), // get only two digits
+        month = datePart[1],
+        day = datePart[2];
+    return day + '/' + month + '/' + year;
+    // console.log(data.attributes.centre)
+    // return data
 })
-
 </script>

@@ -1,11 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	 app: {
+    app: {
         head: {
-        	script: [{
+            script: [{
                 src: 'https://code.iconify.design/3/3.0.0/iconify.min.js'
             }]
         }
     },
-modules: ['@nuxtjs/tailwindcss']
+    modules: ['@nuxtjs/tailwindcss', '@nuxt/devtools'],
+      runtimeConfig: {
+    // The private keys which are only available within server-side
+    // apiSecret: '123',
+    // Keys within public, will be also exposed to the client-side
+    public: {
+      apiBase: ''
+    }
+  }
 })
