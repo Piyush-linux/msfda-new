@@ -37,6 +37,8 @@ import c1 from "@/assets/img/centre/c1.jpg";
 let centre = ref('')
 let url = `${runtimeConfig.public.apiBase}/centres?filters[slug][$eq]=${id}&populate=courses`
 
-let { data } = await (await fetch(url)).json()
+    let { data } = await (await fetch(url)).json()
+
+
 console.log(data)
 </script>

@@ -10,7 +10,8 @@
                     {{ data.attributes.Author.Published }} — Written by {{ data.attributes.Author.username }} 
                 </p>
                 </div>
-                <div class="flex items-center mb-6 space-x-2">
+                <!-- share article -->
+                <!-- <div class="flex items-center mb-6 space-x-2">
                     <p class="text-gray-600">Share this article</p>
                     <a href="#" class="text-gray-600 hover:text-gray-900">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="flex-none w-5 h-5" fill="currentColor">
@@ -28,7 +29,7 @@
                             <path d="M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66H9.237zM3.095 8.855H6.87V20.994H3.095z" />
                         </svg>
                     </a>
-                </div>
+                </div> -->
                 <!-- <img :src="`http://localhost:1337${data.attributes.image.data.attributes.formats.large.url}`" class="object-cover w-full h-64 bg-center rounded" alt="Kutty" /> -->
             </div>
             <div class="w-full mx-auto prose md:w-3/4 lg:w-1/2">
@@ -77,8 +78,16 @@ let { data } = await (await fetch(url)).json()
 }
 
 .blgg p {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    letter-spacing: 1px;
 }
+
+.blgg li{
+    list-style: disc;
+    margin-top: 0.8rem;
+    letter-spacing: 1px;
+}
+
 
 .blgg code {
     font-weight: bolder;

@@ -22,11 +22,11 @@
                         <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
                         <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
                     </div> -->
-                    <div class="buttons w-full text-center mt-1 space-x-2 space-y-2">
-                        <button class="btn text-white bg-blue-500 p-2 rounded-2xl px-4 shadow-lg">Courses</button>
-                        <button class="btn text-white bg-lime-500 p-2 rounded-2xl px-4 shadow-lg">Registration</button>
-                        <button class="btn text-white bg-amber-500 p-2 rounded-2xl px-4 shadow-lg">Knowleage</button>
-                        <button class="btn text-white bg-rose-500 p-2 rounded-2xl px-4 shadow-lg">Upcoming</button>
+                    <div class="buttons flex text-center mt-1 space-x-2 space-y-2">
+                        <NuxtLink to="/courses" class="btn text-white bg-blue-500 p-2 rounded-2xl px-4 shadow-lg">Courses</NuxtLink>
+                        <NuxtLink to="/register" class="btn text-white bg-lime-500 p-2 rounded-2xl px-4 shadow-lg">Registration</NuxtLink>
+                        <NuxtLink to="#partner" class="btn text-white bg-amber-500 p-2 rounded-2xl px-4 shadow-lg">Knowleage</NuxtLink>
+                        <NuxtLink class="btn text-white bg-rose-500 p-2 rounded-2xl px-4 shadow-lg">Upcoming</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
         <!-- centre -->
         <section class="bg-white">
             <div class="container px-6 py-12 mx-auto">
-            	<hr>
+                <hr>
                 <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-4xl my-8 text-center">C E N T R E</h1>
                 <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mt-6">
                     <div class="" v-for="(cen ,i) in centre">
@@ -43,54 +43,40 @@
                 </div>
             </div>
         </section>
+        <!-- upcoming courses -->
+        <webUpcoming/>
         <!-- vision -->
         <section>
-  <div class="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-      <div class="bg-rose-500 p-8 md:p-12 lg:px-16 lg:py-24">
-        <div class="mx-auto max-w-xl text-center">
-          <h2 class="text-2xl font-bold text-white md:text-3xl">
-            V I S I O N
-          </h2>
-
-          <p class="hidden text-white/90 sm:mt-4 sm:block text-justify ">
-            The Vision of MSFDA is "Transforming higher educational landscape, through continuos professional development of teachers in Higher Education Institutes (HEIs) of Maharashtra "
-            <br>
-MSFDA is in a unique position to influence reforms in the higher education as envisaged by the NEP 2020 by engaging with and motivating the faculty. The focus of trainings and the USP of MSFDA is development of holistic learning and overall development as a human being. This will be critical for societal change. 
-          </p>
-
-          <div class="mt-4 md:mt-8">
-            <a
-              href="#"
-              class="inline-block rounded border border-white bg-white px-12 py-3 text-sm font-medium text-rose-500 transition hover:bg-transparent hover:text-white focus:outline-none focus:ring focus:ring-yellow-400"
-            >
-              Know us better
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2">
-        <img
-          alt="Student"
-          src="https://images.unsplash.com/photo-1621274790572-7c32596bc67f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80"
-          class="h-40 w-full object-cover sm:h-56 md:h-full"
-        />
-
-        <img
-          alt="Student"
-          src="https://images.unsplash.com/photo-1567168544813-cc03465b4fa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-          class="h-40 w-full object-cover sm:h-56 md:h-full"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-
+            <div class="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div class="bg-rose-500 p-8 md:p-12 lg:px-16 lg:py-24">
+                        <div class="mx-auto max-w-xl text-center">
+                            <h2 class="text-2xl font-bold text-white md:text-3xl">
+                                V I S I O N
+                            </h2>
+                            <p class="hidden text-white/90 sm:mt-4 sm:block text-justify ">
+                                The Vision of MSFDA is "Transforming higher educational landscape, through continuos professional development of teachers in Higher Education Institutes (HEIs) of Maharashtra "
+                                <br>
+                                MSFDA is in a unique position to influence reforms in the higher education as envisaged by the NEP 2020 by engaging with and motivating the faculty. The focus of trainings and the USP of MSFDA is development of holistic learning and overall development as a human being. This will be critical for societal change.
+                            </p>
+                            <div class="mt-4 md:mt-8">
+                                <a href="#" class="inline-block rounded border border-white bg-white px-12 py-3 text-sm font-medium text-rose-500 transition hover:bg-transparent hover:text-white focus:outline-none focus:ring focus:ring-yellow-400">
+                                    Know us better
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2">
+                        <img alt="Student" src="https://images.unsplash.com/photo-1621274790572-7c32596bc67f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80" class="h-40 w-full object-cover sm:h-56 md:h-full" />
+                        <img alt="Student" src="https://images.unsplash.com/photo-1567168544813-cc03465b4fa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" class="h-40 w-full object-cover sm:h-56 md:h-full" />
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- feature -->
         <section class="bg-white">
             <div class="container px-6 py-10 mx-auto">
-        <hr>
+                <hr>
                 <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl mt-8">Approaches</h1>
                 <!-- <p class="mt-4 text-gray-500 xl:mt-6 ">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus
@@ -111,11 +97,11 @@ MSFDA is in a unique position to influence reforms in the higher education as en
         </section>
         <!-- sponsore -->
         <div class="">
-            <section>
+            <section id="partner">
                 <div class=" px-5 py-24 mx-auto lg:px-16">
                     <div class="mx-auto text-center">
-                    	<hr>
-                <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl mt-8">Knowledge Partner</h1>
+                        <hr>
+                        <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl mt-8">Knowledge Partner</h1>
                         <div class="grid grid-cols-3 gap-4 lg:space-y-10  mx-auto lg:grid-cols-4">
                             <div>
                                 <img class="h-20 mx-auto lg:h-28" src="@/assets/logos/dec.png" alt="Figma">

@@ -158,12 +158,9 @@
                         </div>
                         <!-- 5 -->
                         <div class="w-full" v-show="activeStep == 5">
-                            <div class="text-4xl font-bold mb-4">Review</div>
-                            <div class="flex border-emerald-500 border-2 rounded-md p-6 shadow-2xl">
-                                <div class="subtitle">
-                                    {{ coursename }}
-                                </div>
-                                <div class="w-1/2">
+                            <div class="text-4xl font-bold mb-4">{{ coursename }}</div>
+                            <div class="border-emerald-500">
+                                <div class="border-2 rounded-md p-6 shadow-2xl mt-5">
                                     <div class="font-bold text-3xl mb-6">
                                         Personnel
                                     </div>
@@ -195,8 +192,8 @@
                                         {{district}}
                                     </div>
                                 </div>
-                                <div class="w-1/2">
-                                    <div class="font-bold text-3xl mb-2">
+                                <div class="border-2 rounded-md p-6 shadow-2xl mt-5">
+                                    <div class="font-bold text-3xl mb-6">
                                         Institute
                                     </div>
                                     <div class="content is-medium">
@@ -268,6 +265,7 @@
         </div>
         <!-- modal_end -->
         <!-- notify -->
+        <!-- <div v-show="form_submit" class="relative flex justify-center bg-opacity-70"> -->
         <div v-show="form_submit" class="relative flex justify-center bg-opacity-70">
             <div class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
                 <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
@@ -277,27 +275,26 @@
                             <div class="flex items-center justify-center">
                                 <!-- icon -->
                                 <button class="button" @click="isOpen = false">
-                                    <span class="iconify h-7 w-7" data-icon="ic:round-library-add-check"></span>
+                                    <span class="iconify text-lime-500 h-9 w-9" data-icon="ic:round-library-add-check"></span>
                                 </button>
                             </div>
                             <div class="mt-2 text-center">
-                                <h3 class="text-lg font-medium leading-6 text-gray-800 capitalize" id="modal-title">
+                                <h3 class="text-2xl font-semibold leading-6 text-gray-800 capitalize" id="modal-title">
                                     Form Submitted
                                 </h3>
                                 <p class="mt-2 text-sm text-gray-500">
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit.
+                                    Thank You !
                                 </p>
                             </div>
                         </div>
                         <div class="mt-5 sm:flex sm:items-center sm:justify-evenly justify-center">
-                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
                                 HOME
                             </button>
-                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
                                 COURSES
                             </button>
-                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
                                 ABOUT
                             </button>
                         </div>
@@ -490,8 +487,6 @@ let validate = (val) => {
         let cou1 = centreid.value.value != 'Select option' && coursename.value != 'Select option';
         // let cou2 = centreid.value.value != null && coursename.value.value != null ;
         console.log('Validating ... 1')
-        // console.log(centreid.value.value)
-        // console.log(coursename.value.value)
         // return (cou1 && cou2)
         return cou1
 
@@ -538,14 +533,14 @@ let validate = (val) => {
         let ans;
         let num = p_number.value.length == 10 && /\d/.test(p_number.value);
         if (university.value == 'Other') {
-            let ans = college.value != '' && address.value != '' && universityOther.value != '' && p_name.value != '' && p_email.value != '' && p_number.value != '';
+            ans = college.value != '' && address.value != '' && universityOther.value != '' && p_name.value != '' && p_email.value != '' && p_number.value != '';
             // && aided.value != ''
         } else {
-            let ans = college.value != '' && address.value != '' && university.value != '' && p_name.value != '' && p_email.value != '' && p_number.value != '';
+            ans = college.value != '' && address.value != '' && university.value != '' && p_name.value != '' && p_email.value != '' && p_number.value != '';
             // && aided.value != ''
         }
         console.log(ans)
-        return true
+        return ans
 
     } else {
         console.log('fail in validation ...')
@@ -585,7 +580,13 @@ let next = () => {
             break;
         case 4:
             console.log('validate 4')
-            activeStep.value += 1
+            if (validate(activeStep.value)) {
+                // if (true) {
+                activeStep.value += 1
+            } else {
+                notify()
+            }
+            // activeStep.value += 1
             break;
         default:
             // statements_def
@@ -611,7 +612,7 @@ let register = async (dt) => {
         })).json()
         console.log('--RES--')
         console.log(res)
-        if (res.value != 'fail') {
+        if (res != 'fail') {
             form_submit.value = true;
         }
     } catch (e) {
@@ -628,6 +629,6 @@ let submit = async () => {
     console.log('--FORM--')
     console.log(form_data)
     await register(form_data)
-    console.log('submit form')
+    console.log('submit form !')
 }
 </script>

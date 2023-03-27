@@ -1,26 +1,29 @@
+# Task
 
+- [x] Register
+	- Invalid Alert
+	- Form Submit BoxModal
+- [x] Upcoming Courses
+- [x] Google Calender Embeed
+- regiter : Validation
+- erro handeling : try_catch( fetch )
+- Strapi CMS Deployment 
+
+ 
+---
+Deployment
 .env
 ```sh
-DATABASE_URL=mongodb+srv://msfda:xFtXu86eaj2MAM9@cluster0.bgqcqy1.mongodb.net/msfda
+yarn build 
+export DATABASE_URL=mongodb+srv://msfda:xFtXu86eaj2MAM9@cluster0.bgqcqy1.mongodb.net/msfda
 # NUXT_API_SECRET=api_secret_token
-NUXT_PUBLIC_API_BASE=http://192.168.0.103:1337/api
+export NUXT_PUBLIC_API_BASE=http://192.168.0.103:1337/api
+
+node ./output/server/index.js
 ```
 
 
 ---
-
-# TASk
-
-- API
-	- always set API Key : 
-
-- [ ] /register/:id
-
-- [ ] folder
-	- .env : DATABASE_URL
-	- pages
-	- layout
-
 
 # UI
 

@@ -1,11 +1,11 @@
 <template>
-    <div class="mx-20">
+    <div class="mx-5 sm:mx-20">
         <!-- ====== About Section Start -->
         <section class="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]">
             <div class="container mx-auto">
-                <div class="-mx-4 flex flex-wrap items-center justify-between">
+                <div class="sm:mx-4 flex flex-wrap items-center justify-between">
                     <div class="w-full px-4 lg:w-6/12">
-                        <div class="-mx-3 flex items-center sm:-mx-4">
+                        <div class="sm:mx-3 flex items-center sm:-mx-4">
                             <div class="w-full px-3 sm:px-4 xl:w-1/2">
                                 <div class="py-3 sm:py-4">
                                     <!-- <img src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-1.jpg" alt="" class="w-full rounded-2xl" /> -->

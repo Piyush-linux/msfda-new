@@ -10,10 +10,10 @@
                         </div>
                     </div>
                     <div class="flex flex-col items-start mt-12 mb-12 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
-                        <h1 class="mb-8 text-4xl font-bold leading-none tracking-tighter text-neutral-600 md:text-7xl lg:text-5xl">
+                        <h1 class="mb-8 text-4xl text-center sm:text-left font-bold leading-none tracking-tighter text-neutral-600 md:text-7xl lg:text-5xl">
                             {{data.attributes.name}}
                         </h1>
-                        <p class="mb-1 text-base leading-relaxed text-left text-gray-500">
+                        <p class="mb-1 text-base text-center leading-relaxed sm:text-left text-gray-500">
                             {{data.attributes.about}}
                         </p>
                         <div class="mt-0 lg:mt-1 w-full sm:flex ">
