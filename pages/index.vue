@@ -22,11 +22,11 @@
                         <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
                         <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
                     </div> -->
-                    <div class="buttons flex text-center mt-1 space-x-2 space-y-2">
-                        <NuxtLink to="/courses" class="btn text-white bg-blue-500 p-2 rounded-2xl px-4 shadow-lg">Courses</NuxtLink>
-                        <NuxtLink to="/register" class="btn text-white bg-lime-500 p-2 rounded-2xl px-4 shadow-lg">Registration</NuxtLink>
-                        <NuxtLink to="#partner" class="btn text-white bg-amber-500 p-2 rounded-2xl px-4 shadow-lg">Knowleage</NuxtLink>
-                        <NuxtLink class="btn text-white bg-rose-500 p-2 rounded-2xl px-4 shadow-lg">Upcoming</NuxtLink>
+                    <div class="buttons flex justify-center mt-1">
+                        <NuxtLink to="/courses" class="m-1 btn text-white bg-blue-500 p-2 rounded-2xl px-4 shadow-lg">Courses</NuxtLink>
+                        <NuxtLink to="/register" class="m-1 btn text-white bg-lime-500 p-2 rounded-2xl px-4 shadow-lg">Registration</NuxtLink>
+                        <NuxtLink to="#partner" class="m-1 btn text-white bg-amber-500 p-2 rounded-2xl px-4 shadow-lg">Knowleage</NuxtLink>
+                        <NuxtLink to="#upcoming" class="m-1 btn text-white bg-rose-500 p-2 rounded-2xl px-4 shadow-lg">Upcoming</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,9 @@
             </div>
         </section>
         <!-- upcoming courses -->
-        <webUpcoming/>
+        <div id="upcoming">
+            <webUpcoming />
+        </div>
         <!-- vision -->
         <section>
             <div class="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
@@ -60,9 +62,9 @@
                                 MSFDA is in a unique position to influence reforms in the higher education as envisaged by the NEP 2020 by engaging with and motivating the faculty. The focus of trainings and the USP of MSFDA is development of holistic learning and overall development as a human being. This will be critical for societal change.
                             </p>
                             <div class="mt-4 md:mt-8">
-                                <a href="#" class="inline-block rounded border border-white bg-white px-12 py-3 text-sm font-medium text-rose-500 transition hover:bg-transparent hover:text-white focus:outline-none focus:ring focus:ring-yellow-400">
+                                <NuxtLink to="/about" class="inline-block rounded border border-white bg-white px-12 py-3 text-sm font-medium text-rose-500 transition hover:bg-transparent hover:text-white focus:outline-none focus:ring focus:ring-yellow-400">
                                     Know us better
-                                </a>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>

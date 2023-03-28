@@ -1,5 +1,8 @@
 # Task
 
+
+
+- [ ] Meta Tag's
 - [x] Register
 	- Invalid Alert
 	- Form Submit BoxModal
@@ -26,6 +29,12 @@ node ./output/server/index.js
 ---
 
 # UI
+
+- /dashboard
+	- Input : https://mynaui.com/
+	- https://tailwindflex.com/prajwal/feature-card
+	- info : https://tailwindflex.com/prem/info-card
+	- mess : https://tailwindflex.com/team-tailwindflex/beautiful-info-card
 
 - /register
 	- inp : https://tailwindtemplates.io/templates?category=input&page=3
@@ -60,7 +69,7 @@ node ./output/server/index.js
 - https://www.floatui.com/components/
 - https://wickedblocks.dev/groups/sidebar/
 - https://github.com/unlight/tailwind-components#avatar
-- https://mynaui.com/input/
+- https://mynaui.com/
 
 - https://dev.to/mariann93502220/30-free-tailwind-css-templates-to-kick-start-your-next-project-3igo
 - https://kitwind.io/products/kometa/components/contents

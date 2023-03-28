@@ -149,11 +149,8 @@
                         </div>
                         <!-- 5 -->
                         <div class="w-full" v-show="activeStep == 5">
-                            <div class="text-4xl font-bold mb-4">Review</div>
+                            <div class="text-4xl font-bold mb-4">{{ coursename }}</div>
                             <div class="flex border-emerald-500 border-2 rounded-md p-6 shadow-2xl">
-                                <div class="subtitle">
-                                    {{ coursename }}
-                                </div>
                                 <div class="w-1/2">
                                     <div class="font-bold text-3xl mb-6">
                                         Personnel
@@ -567,7 +564,7 @@ let register = async (dt) => {
         })).json()
         console.log('--RES--')
         console.log(res)
-        if (res.value != 'fail') {
+        if (res != 'fail') {
             form_submit.value = true;
         }
     } catch (e) {

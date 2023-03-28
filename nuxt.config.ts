@@ -7,7 +7,19 @@ export default defineNuxtConfig({
             }]
         }
     },
-    modules: ['@nuxtjs/tailwindcss', '@nuxt/devtools'],
+    modules: [
+        '@nuxtjs/tailwindcss',
+        '@nuxtjs/strapi'
+        // , '@nuxt/devtools'
+        ],
+      strapi: {
+  url: process.env.STRAPI_URL || 'http://localhost:1337',
+  prefix: '/api',
+  version: 'v4',
+  cookie: {},
+  cookieName: 'msfda'
+}
+,
       runtimeConfig: {
     // The private keys which are only available within server-side
     // apiSecret: '123',
