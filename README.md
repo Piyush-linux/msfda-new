@@ -12,7 +12,22 @@
 - erro handeling : try_catch( fetch )
 - Strapi CMS Deployment 
 
- 
+
+##
+1. ENV
+```sh
+const runtimeConfig = useRuntimeConfig()
+runtimeConfig.public.apiBase
+```
+
+
+
+## study
+- [Prisma CRUD](https://www.prisma.io/docs/concepts/components/prisma-client/crud#read)
+- [Nuxt Strapi](https://strapi.nuxtjs.org/setup/)
+- [Feedback API](https://feedbackapi.com/#review-object)
+- [Nuxt Charts](https://vue-chart-3.netlify.app/guide/usage/chart-instance.html)
+- [Vue Charts](https://vue-chartjs.org/examples/#vue-2-charts-vue-chartjs-v4)
 ---
 Deployment
 .env
@@ -35,6 +50,16 @@ node ./output/server/index.js
 	- https://tailwindflex.com/prajwal/feature-card
 	- info : https://tailwindflex.com/prem/info-card
 	- mess : https://tailwindflex.com/team-tailwindflex/beautiful-info-card
+	
+	- https://windmill-dashboard.vercel.app/tables.html
+	- https://moesaid.github.io/cleopatra/index-1.html
+	- https://www.tailwindtoolbox.com/templates/admin-template-day
+	- https://github.com/Murked/vue-tailwind-admin#vue-tailwind-admin
+	- https://www.creative-tim.com/product/argon-dashboard-tailwind
+	- https://www.creative-tim.com/templates/vuejs-free
+	- https://github.com/themesberg/flowbite-admin-dashboard?ref=horizon-ui.com
+	- https://demos.creative-tim.com/argon-dashboard-pro-tailwind/pages/pages/profile/overview.html
+
 
 - /register
 	- inp : https://tailwindtemplates.io/templates?category=input&page=3
@@ -49,17 +74,12 @@ node ./output/server/index.js
 - /error 
 	- error : https://merakiui.com/components/404-pages =last
 	- https://www.hyperui.dev/components/application-ui/error-pages =2_last
----
-# API
-
-/centre/:id > get centre & related courses
-
-`http -b GET ':1337/api/centres/1?populate=courses'`
 
 ---
 
 ## Tailwind
 - https://componentland.com/components/3
+- https://www.tailbits.com/components/free
 - https://merakiui.com/
 - https://kutty.netlify.app/components/
 - https://www.hyperui.dev/

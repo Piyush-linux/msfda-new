@@ -3,7 +3,6 @@
 - create course
 - update course
 - getExcelData
-
 */
 
 import { prisma } from ".";
@@ -19,50 +18,35 @@ export const createUser = (userData) => {
 
 }
 
-//-- Course
-// POST ID : POST /courses
-export const createCourse = (courseData) => {
-    console.log(createCourse)
-    return prisma.course.create({
-        data: courseData
-    })
-}
-// PUT ID : /courses/1 
-export const updateCourse = (id) => {
-    return prisma.user.create({
-        data: courseData
-    })
-}
-// Del ID : /courses/1
-export const deleteCourse = (id) => {
-    let res = prisma.course.delete({
-        where: {
-            id: id
-        }
+/*
+-- Users
+get
+*/
+export const getUsers = (id) => {
+    let res = prisma.user.findMany({
+      select: {
+        id:true,
+        name: true,
+        email: true,
+        number: true
+      }
     })
     return res
 }
-//-- GET ID
-// courseID
-// centreID
 
-export const getCourse = (id) => {
+export const getUsr = (id) => {
     console.log(id)
-    let res = prisma.course.findFirst({
+    // chk params exist : centreid , courseid , date 
+    let res = prisma.user.findFirst({
         where: {
-            id: id
+            centreid: id
         }
     })
     return res
-}
-
-export const getAllCourse = () => {
-    return prisma.course.findMany()
 }
 
 
 // Excel Output
-
 
 export const getExcelData = async (userData) => {
     /*

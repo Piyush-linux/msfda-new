@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     },
     modules: [
         '@nuxtjs/tailwindcss',
-        '@nuxtjs/strapi'
+        '@nuxtjs/strapi',
         // , '@nuxt/devtools'
         ],
       strapi: {
