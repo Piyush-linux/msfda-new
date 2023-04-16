@@ -279,15 +279,15 @@
                             </div>
                         </div>
                         <div class="mt-5 sm:flex sm:items-center sm:justify-evenly justify-center">
-                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                            <NuxtLink to="/" class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
                                 HOME
-                            </button>
-                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                            </NuxtLink>
+                            <NuxtLink to="/courses" class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
                                 COURSES
-                            </button>
-                            <button class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                            </NuxtLink>
+                            <NuxtLink to="/about" class="w-full px-4 py-2 mt-2 text-sm font-bold tracking-wide text-white capitalize transition-colors duration-300 transform bg-sky-500 rounded-md sm:w-auto sm:mt-0 hover:bg-sky-600 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
                                 ABOUT
-                            </button>
+                            </NuxtLink>
                         </div>
                     </div>
                 </div>

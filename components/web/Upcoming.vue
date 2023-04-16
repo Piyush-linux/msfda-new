@@ -38,9 +38,10 @@
 
 const runtimeConfig = useRuntimeConfig()
 let url= `${runtimeConfig.public.apiBase}/upcoming?populate=courses`
-
-let { data : courses } = await (await fetch(url)).json()
-console.log(courses)
+// console.log(runtimeConfig)
+// let url= `http://localhost:1337/api/upcoming?populate=courses`
+let data = await ( await fetch(url) ).json()
+console.log(data)
 // let courses = [{
 //     name: "MSFDA-TISS Assessment and Learning",
 //     path: "639a9b445dd54435c4eacb90",

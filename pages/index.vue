@@ -45,7 +45,7 @@
         </section>
         <!-- upcoming courses -->
         <div id="upcoming">
-            <webUpcoming />
+            <!-- <webUpcoming /> -->
         </div>
         <!-- vision -->
         <section>
